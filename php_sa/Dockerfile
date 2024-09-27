@@ -16,11 +16,17 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Install PHPStan via Composer
 RUN composer global require phpstan/phpstan
 
+# Install PHP CodeSniffer globally using Composer
+RUN composer global require "squizlabs/php_codesniffer=*"
+
 # Add Composer global bin to the PATH
 ENV PATH="/root/.composer/vendor/bin:${PATH}"
 
 # Verify installation
 RUN phpstan --version
 
+# Verify installation
+RUN phpcs --version && phpcbf --version
+
 # Command to run PHPStan
-ENTRYPOINT ["phpstan"]
+ENTRYPOINT ["/bin/sh", "-c"]

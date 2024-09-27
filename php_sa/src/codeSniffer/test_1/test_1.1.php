@@ -1,6 +1,5 @@
 <?php
 
-namespace test;
 
 class Example
 {
