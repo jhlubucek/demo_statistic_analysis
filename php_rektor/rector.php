@@ -9,7 +9,7 @@ use Rector\Set\ValueObject\SetList;
 return static function (RectorConfig $rectorConfig): void {
     // Define the paths to refactor
     $rectorConfig->paths([
-        __DIR__ . '/src/php_version',
+        __DIR__ . '/src/phpVesion',
     ]);
 
     // Apply PHP 8.1 specific transformations and general refactorings
