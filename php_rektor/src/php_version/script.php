@@ -17,4 +17,4 @@ class MyCalculator {
 }
 
 // This is an incorrect static method call
-echo script . phpMyCalculator::multiply(3, 4) . PHP_EOL; // Should throw an error in PHP 7.4+
+echo phpMyCalculator::multiply(3, 4) . PHP_EOL; // Should throw an error in PHP 7.4+
