@@ -8,14 +8,14 @@ class Product {
     }
 }
 
-function getProduct(int $id) {
+function getProduct(int $id): ?Product {
     if ($id === 1) {
         return new Product("Sample Product");
     }
     return null;
 }
 
-function registerProduct(?Product $product) {
+function registerProduct(?Product $product): void {
 
     if (!is_null($product)) {
         echo "Product '{$product->name}' has been registered successfully!\n";
