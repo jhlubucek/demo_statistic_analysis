@@ -1,0 +1,2 @@
+docker build -t php-rector-demo .
+docker run --rm -v $(pwd):/app php-rector-demo rector process src/refactor --dry-run --config /app/refactor.rector.php
