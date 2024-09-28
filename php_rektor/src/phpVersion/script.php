@@ -2,7 +2,7 @@
 
 // Example 1: Deprecated create_function usage (PHP 7.2+ deprecation)
 $callback = create_function('$a,$b', 'return $a + $b;');
-echo "3 + 2 = " . $callback(1, 2) . PHP_EOL; // Outputs 3
+echo "3 + 2 = " . $callback(3, 2) . PHP_EOL; // Outputs 3
 
 // Example 2: Incorrect implode usage (PHP 7.4+ deprecation)
 $pieces = ['apple', 'orange', 'banana'];
