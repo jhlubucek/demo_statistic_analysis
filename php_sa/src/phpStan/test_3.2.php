@@ -16,7 +16,6 @@ function getProduct(int $id): ?Product {
 }
 
 function registerProduct(?Product $product): void {
-
     if (!is_null($product)) {
         echo "Product '{$product->name}' has been registered successfully!\n";
     }else{
