@@ -12,9 +12,6 @@ return static function (RectorConfig $rectorConfig): void {
         __DIR__ . '/src/refactor',
     ]);
 
-    // Option to remove unused imports
-    $rectorConfig->importNames();
-
     // Define individual rules to apply
     $rectorConfig->rule(ListToArrayDestructRector::class);
     $rectorConfig->rule(NullToStrictStringFuncCallArgRector::class);
