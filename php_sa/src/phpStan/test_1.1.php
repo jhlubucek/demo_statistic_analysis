@@ -35,6 +35,7 @@ class Product
 // Step 2: Implement the ProductRepository interface
 class InMemoryProductRepository implements ProductRepository
 {
+    /** @var Product[] */
     private array $products;
 
     public function __construct()
