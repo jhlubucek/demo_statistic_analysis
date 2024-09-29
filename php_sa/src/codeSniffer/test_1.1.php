@@ -1,7 +1,7 @@
 <?php
 
 
-class Example
+class example
 {
     public function myMethod($a,$b) {
         return $a + $b;}
