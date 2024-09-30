@@ -1,0 +1,29 @@
+
+docker pull php:8.1-cli
+docker build -t phpcs-phpstan-image .
+
+====================================STAN
+
+docker run --rm -v $(pwd):/app phpcs-phpstan-image "phpstan analyse --level 8 /app/src/phpStan/test_1.1.php"
+
+docker run --rm -v $(pwd):/app phpcs-phpstan-image "phpstan analyse --level 8 /app/src/phpStan/test_2.1.php"
+docker run --rm -v $(pwd):/app phpcs-phpstan-image "phpstan analyse --level 5 /app/src/phpStan/test_2.1.php"
+docker run --rm -v $(pwd):/app phpcs-phpstan-image "phpstan analyse --level 0 /app/src/phpStan/test_2.1.php"
+
+docker run --rm -v $(pwd):/app phpcs-phpstan-image "phpstan analyse --level 8 /app/src/phpStan/test_3.1.php"
+
+====================================CS
+
+docker run --rm -v $(pwd):/app phpcs-phpstan-image "phpcs --standard=PSR2 /app/src/codeSniffer"
+docker run --rm -v $(pwd):/app phpcs-phpstan-image "phpcbf --standard=PSR2 /app/src/codeSniffer"
+
+=====================================rector
+
+docker build -t php-rector-demo .
+
+docker run --rm -v $(pwd):/app php:8.1-cli php /app/src/phpVersion/script.php
+docker run --rm -v $(pwd):/app php-rector-demo rector process src/phpVersion
+
+
+docker run --rm -v $(pwd):/app php-rector-demo rector process --config /app/refactor.rector.php src/refactor
+docker run --rm -v $(pwd):/app php-rector-demo rector process --config /app/refactor.rector.php src/refactor --dry-run

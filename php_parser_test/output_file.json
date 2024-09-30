@@ -1,0 +1,1838 @@
+array(
+    0: Stmt_Expression(
+        expr: Expr_FuncCall(
+            name: Expr_Closure(
+                attrGroups: array(
+                )
+                static: false
+                byRef: false
+                params: array(
+                    0: Param(
+                        attrGroups: array(
+                        )
+                        flags: 0
+                        type: null
+                        byRef: false
+                        variadic: false
+                        var: Expr_Variable(
+                            name: uri
+                        )
+                        default: null
+                        hooks: array(
+                        )
+                    )
+                )
+                uses: array(
+                )
+                returnType: Identifier(
+                    name: void
+                )
+                stmts: array(
+                    0: Stmt_Expression(
+                        expr: Expr_Assign(
+                            var: Expr_Variable(
+                                name: shortcuts
+                            )
+                            expr: Expr_Array(
+                                items: array(
+                                    0: ArrayItem(
+                                        key: Scalar_String(
+                                            value: /?:
+                                        )
+                                        value: Scalar_String(
+                                            value: /language.operators.comparison#language.operators.comparison.ternary
+                                        )
+                                        byRef: false
+                                        unpack: false
+                                    )
+                                    1: ArrayItem(
+                                        key: Scalar_String(
+                                            value: /??
+                                        )
+                                        value: Scalar_String(
+                                            value: /language.operators.comparison#language.operators.comparison.coalesce
+                                        )
+                                        byRef: false
+                                        unpack: false
+                                    )
+                                    2: ArrayItem(
+                                        key: Scalar_String(
+                                            value: /??=
+                                        )
+                                        value: Scalar_String(
+                                            value: /language.operators.assignment#language.operators.assignment.other
+                                        )
+                                        byRef: false
+                                        unpack: false
+                                    )
+                                )
+                            )
+                        )
+                    )
+                    1: Stmt_If(
+                        cond: Expr_Isset(
+                            vars: array(
+                                0: Expr_ArrayDimFetch(
+                                    var: Expr_Variable(
+                                        name: shortcuts
+                                    )
+                                    dim: Expr_Variable(
+                                        name: uri
+                                    )
+                                )
+                            )
+                        )
+                        stmts: array(
+                            0: Stmt_Expression(
+                                expr: Expr_FuncCall(
+                                    name: Name(
+                                        name: header
+                                    )
+                                    args: array(
+                                        0: Arg(
+                                            name: null
+                                            value: Scalar_InterpolatedString(
+                                                parts: array(
+                                                    0: InterpolatedStringPart(
+                                                        value: Location: 
+                                                    )
+                                                    1: Expr_ArrayDimFetch(
+                                                        var: Expr_Variable(
+                                                            name: shortcuts
+                                                        )
+                                                        dim: Expr_Variable(
+                                                            name: uri
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                            byRef: false
+                                            unpack: false
+                                        )
+                                    )
+                                )
+                            )
+                            1: Stmt_Expression(
+                                expr: Expr_Exit(
+                                    expr: null
+                                )
+                            )
+                        )
+                        elseifs: array(
+                        )
+                        else: null
+                    )
+                )
+            )
+            args: array(
+                0: Arg(
+                    name: null
+                    value: Expr_BinaryOp_Coalesce(
+                        left: Expr_ArrayDimFetch(
+                            var: Expr_Variable(
+                                name: _SERVER
+                            )
+                            dim: Scalar_String(
+                                value: REQUEST_URI
+                            )
+                        )
+                        right: Scalar_String(
+                            value: 
+                        )
+                    )
+                    byRef: false
+                    unpack: false
+                )
+            )
+        )
+    )
+    1: Stmt_Expression(
+        expr: Expr_Assign(
+            var: Expr_Variable(
+                name: timestamps
+            )
+            expr: Expr_Array(
+                items: array(
+                    0: ArrayItem(
+                        key: null
+                        value: Expr_ErrorSuppress(
+                            expr: Expr_FuncCall(
+                                name: Name(
+                                    name: getlastmod
+                                )
+                                args: array(
+                                )
+                            )
+                        )
+                        byRef: false
+                        unpack: false
+                    )
+                )
+            )
+        )
+    )
+    2: Stmt_Expression(
+        expr: Expr_Assign(
+            var: Expr_ArrayDimFetch(
+                var: Expr_Variable(
+                    name: timestamps
+                )
+                dim: null
+            )
+            expr: Expr_ErrorSuppress(
+                expr: Expr_FuncCall(
+                    name: Name(
+                        name: filemtime
+                    )
+                    args: array(
+                        0: Arg(
+                            name: null
+                            value: Scalar_String(
+                                value: include/prepend.inc
+                            )
+                            byRef: false
+                            unpack: false
+                        )
+                    )
+                )
+            )
+        )
+    )
+    3: Stmt_Expression(
+        expr: Expr_Assign(
+            var: Expr_ArrayDimFetch(
+                var: Expr_Variable(
+                    name: timestamps
+                )
+                dim: null
+            )
+            expr: Expr_ErrorSuppress(
+                expr: Expr_FuncCall(
+                    name: Name(
+                        name: filemtime
+                    )
+                    args: array(
+                        0: Arg(
+                            name: null
+                            value: Scalar_String(
+                                value: include/pregen-confs.inc
+                            )
+                            byRef: false
+                            unpack: false
+                        )
+                    )
+                )
+            )
+        )
+    )
+    4: Stmt_Expression(
+        expr: Expr_Assign(
+            var: Expr_ArrayDimFetch(
+                var: Expr_Variable(
+                    name: timestamps
+                )
+                dim: null
+            )
+            expr: Expr_ErrorSuppress(
+                expr: Expr_FuncCall(
+                    name: Name(
+                        name: filemtime
+                    )
+                    args: array(
+                        0: Arg(
+                            name: null
+                            value: Scalar_String(
+                                value: include/pregen-news.inc
+                            )
+                            byRef: false
+                            unpack: false
+                        )
+                    )
+                )
+            )
+        )
+    )
+    5: Stmt_Expression(
+        expr: Expr_Assign(
+            var: Expr_ArrayDimFetch(
+                var: Expr_Variable(
+                    name: timestamps
+                )
+                dim: null
+            )
+            expr: Expr_ErrorSuppress(
+                expr: Expr_FuncCall(
+                    name: Name(
+                        name: filemtime
+                    )
+                    args: array(
+                        0: Arg(
+                            name: null
+                            value: Scalar_String(
+                                value: include/version.inc
+                            )
+                            byRef: false
+                            unpack: false
+                        )
+                    )
+                )
+            )
+        )
+    )
+    6: Stmt_Expression(
+        expr: Expr_Assign(
+            var: Expr_ArrayDimFetch(
+                var: Expr_Variable(
+                    name: timestamps
+                )
+                dim: null
+            )
+            expr: Expr_ErrorSuppress(
+                expr: Expr_FuncCall(
+                    name: Name(
+                        name: filemtime
+                    )
+                    args: array(
+                        0: Arg(
+                            name: null
+                            value: Scalar_String(
+                                value: js/common.js
+                            )
+                            byRef: false
+                            unpack: false
+                        )
+                    )
+                )
+            )
+        )
+    )
+    7: Stmt_Expression(
+        expr: Expr_Assign(
+            var: Expr_Variable(
+                name: timestamp
+            )
+            expr: Expr_FuncCall(
+                name: Name(
+                    name: max
+                )
+                args: array(
+                    0: Arg(
+                        name: null
+                        value: Expr_Variable(
+                            name: timestamps
+                        )
+                        byRef: false
+                        unpack: false
+                    )
+                )
+            )
+        )
+    )
+    8: Stmt_Expression(
+        expr: Expr_Assign(
+            var: Expr_Variable(
+                name: tsstring
+            )
+            expr: Expr_BinaryOp_Concat(
+                left: Expr_FuncCall(
+                    name: Name(
+                        name: gmdate
+                    )
+                    args: array(
+                        0: Arg(
+                            name: null
+                            value: Scalar_String(
+                                value: D, d M Y H:i:s 
+                            )
+                            byRef: false
+                            unpack: false
+                        )
+                        1: Arg(
+                            name: null
+                            value: Expr_Variable(
+                                name: timestamp
+                            )
+                            byRef: false
+                            unpack: false
+                        )
+                    )
+                )
+                right: Scalar_String(
+                    value: GMT
+                )
+            )
+        )
+    )
+    9: Stmt_If(
+        cond: Expr_BinaryOp_BooleanAnd(
+            left: Expr_Isset(
+                vars: array(
+                    0: Expr_ArrayDimFetch(
+                        var: Expr_Variable(
+                            name: _SERVER
+                        )
+                        dim: Scalar_String(
+                            value: HTTP_IF_MODIFIED_SINCE
+                        )
+                    )
+                )
+            )
+            right: Expr_BinaryOp_Equal(
+                left: Expr_ArrayDimFetch(
+                    var: Expr_Variable(
+                        name: _SERVER
+                    )
+                    dim: Scalar_String(
+                        value: HTTP_IF_MODIFIED_SINCE
+                    )
+                )
+                right: Expr_Variable(
+                    name: tsstring
+                )
+            )
+        )
+        stmts: array(
+            0: Stmt_Expression(
+                expr: Expr_FuncCall(
+                    name: Name(
+                        name: header
+                    )
+                    args: array(
+                        0: Arg(
+                            name: null
+                            value: Scalar_String(
+                                value: HTTP/1.1 304 Not Modified
+                            )
+                            byRef: false
+                            unpack: false
+                        )
+                    )
+                )
+            )
+            1: Stmt_Expression(
+                expr: Expr_Exit(
+                    expr: null
+                )
+            )
+        )
+        elseifs: array(
+        )
+        else: null
+    )
+    10: Stmt_Expression(
+        expr: Expr_FuncCall(
+            name: Name(
+                name: header
+            )
+            args: array(
+                0: Arg(
+                    name: null
+                    value: Expr_BinaryOp_Concat(
+                        left: Scalar_String(
+                            value: Last-Modified: 
+                        )
+                        right: Expr_Variable(
+                            name: tsstring
+                        )
+                    )
+                    byRef: false
+                    unpack: false
+                )
+            )
+        )
+    )
+    11: Stmt_Expression(
+        expr: Expr_Assign(
+            var: Expr_ArrayDimFetch(
+                var: Expr_Variable(
+                    name: _SERVER
+                )
+                dim: Scalar_String(
+                    value: BASE_PAGE
+                )
+            )
+            expr: Scalar_String(
+                value: index.php
+            )
+        )
+    )
+    12: Stmt_Expression(
+        expr: Expr_Include(
+            expr: Scalar_String(
+                value: include/prepend.inc
+            )
+            type: TYPE_INCLUDE_ONCE (2)
+        )
+    )
+    13: Stmt_Expression(
+        expr: Expr_Include(
+            expr: Scalar_String(
+                value: include/branches.inc
+            )
+            type: TYPE_INCLUDE_ONCE (2)
+        )
+    )
+    14: Stmt_Expression(
+        expr: Expr_Include(
+            expr: Scalar_String(
+                value: include/pregen-confs.inc
+            )
+            type: TYPE_INCLUDE_ONCE (2)
+        )
+    )
+    15: Stmt_Expression(
+        expr: Expr_Include(
+            expr: Scalar_String(
+                value: include/pregen-news.inc
+            )
+            type: TYPE_INCLUDE_ONCE (2)
+        )
+    )
+    16: Stmt_Expression(
+        expr: Expr_Include(
+            expr: Scalar_String(
+                value: include/version.inc
+            )
+            type: TYPE_INCLUDE_ONCE (2)
+        )
+    )
+    17: Stmt_Expression(
+        expr: Expr_FuncCall(
+            name: Name(
+                name: mirror_setcookie
+            )
+            args: array(
+                0: Arg(
+                    name: null
+                    value: Scalar_String(
+                        value: LAST_NEWS
+                    )
+                    byRef: false
+                    unpack: false
+                )
+                1: Arg(
+                    name: null
+                    value: Expr_ArrayDimFetch(
+                        var: Expr_Variable(
+                            name: _SERVER
+                        )
+                        dim: Scalar_String(
+                            value: REQUEST_TIME
+                        )
+                    )
+                    byRef: false
+                    unpack: false
+                )
+                2: Arg(
+                    name: null
+                    value: Expr_BinaryOp_Mul(
+                        left: Expr_BinaryOp_Mul(
+                            left: Expr_BinaryOp_Mul(
+                                left: Scalar_Int(
+                                    value: 60
+                                )
+                                right: Scalar_Int(
+                                    value: 60
+                                )
+                            )
+                            right: Scalar_Int(
+                                value: 24
+                            )
+                        )
+                        right: Scalar_Int(
+                            value: 365
+                        )
+                    )
+                    byRef: false
+                    unpack: false
+                )
+            )
+        )
+    )
+    18: Stmt_Expression(
+        expr: Expr_Assign(
+            var: Expr_Variable(
+                name: content
+            )
+            expr: Scalar_String(
+                value: <div class='home-content'>
+            )
+        )
+    )
+    19: Stmt_Expression(
+        expr: Expr_Assign(
+            var: Expr_Variable(
+                name: frontpage
+            )
+            expr: Expr_Array(
+                items: array(
+                )
+            )
+        )
+    )
+    20: Stmt_Foreach(
+        expr: Expr_Variable(
+            name: NEWS_ENTRIES
+        )
+        keyVar: null
+        byRef: false
+        valueVar: Expr_Variable(
+            name: entry
+        )
+        stmts: array(
+            0: Stmt_Foreach(
+                expr: Expr_ArrayDimFetch(
+                    var: Expr_Variable(
+                        name: entry
+                    )
+                    dim: Scalar_String(
+                        value: category
+                    )
+                )
+                keyVar: null
+                byRef: false
+                valueVar: Expr_Variable(
+                    name: category
+                )
+                stmts: array(
+                    0: Stmt_If(
+                        cond: Expr_BinaryOp_Equal(
+                            left: Expr_ArrayDimFetch(
+                                var: Expr_Variable(
+                                    name: category
+                                )
+                                dim: Scalar_String(
+                                    value: term
+                                )
+                            )
+                            right: Scalar_String(
+                                value: frontpage
+                            )
+                        )
+                        stmts: array(
+                            0: Stmt_Expression(
+                                expr: Expr_Assign(
+                                    var: Expr_ArrayDimFetch(
+                                        var: Expr_Variable(
+                                            name: frontpage
+                                        )
+                                        dim: null
+                                    )
+                                    expr: Expr_Variable(
+                                        name: entry
+                                    )
+                                )
+                            )
+                            1: Stmt_If(
+                                cond: Expr_BinaryOp_GreaterOrEqual(
+                                    left: Expr_FuncCall(
+                                        name: Name(
+                                            name: count
+                                        )
+                                        args: array(
+                                            0: Arg(
+                                                name: null
+                                                value: Expr_Variable(
+                                                    name: frontpage
+                                                )
+                                                byRef: false
+                                                unpack: false
+                                            )
+                                        )
+                                    )
+                                    right: Scalar_Int(
+                                        value: 25
+                                    )
+                                )
+                                stmts: array(
+                                    0: Stmt_Break(
+                                        num: Scalar_Int(
+                                            value: 2
+                                        )
+                                    )
+                                )
+                                elseifs: array(
+                                )
+                                else: null
+                            )
+                        )
+                        elseifs: array(
+                        )
+                        else: null
+                    )
+                )
+            )
+        )
+    )
+    21: Stmt_Foreach(
+        expr: Expr_Variable(
+            name: frontpage
+        )
+        keyVar: null
+        byRef: false
+        valueVar: Expr_Variable(
+            name: entry
+        )
+        stmts: array(
+            0: Stmt_Expression(
+                expr: Expr_Assign(
+                    var: Expr_Variable(
+                        name: link
+                    )
+                    expr: Expr_FuncCall(
+                        name: Name(
+                            name: preg_replace
+                        )
+                        args: array(
+                            0: Arg(
+                                name: null
+                                value: Scalar_String(
+                                    value: ~^(http://php.net/|https://www.php.net/)~
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                            1: Arg(
+                                name: null
+                                value: Scalar_String(
+                                    value: 
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                            2: Arg(
+                                name: null
+                                value: Expr_ArrayDimFetch(
+                                    var: Expr_Variable(
+                                        name: entry
+                                    )
+                                    dim: Scalar_String(
+                                        value: id
+                                    )
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                        )
+                    )
+                )
+            )
+            1: Stmt_Expression(
+                expr: Expr_Assign(
+                    var: Expr_Variable(
+                        name: id
+                    )
+                    expr: Expr_FuncCall(
+                        name: Name(
+                            name: parse_url
+                        )
+                        args: array(
+                            0: Arg(
+                                name: null
+                                value: Expr_ArrayDimFetch(
+                                    var: Expr_Variable(
+                                        name: entry
+                                    )
+                                    dim: Scalar_String(
+                                        value: id
+                                    )
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                            1: Arg(
+                                name: null
+                                value: Expr_ConstFetch(
+                                    name: Name(
+                                        name: PHP_URL_FRAGMENT
+                                    )
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                        )
+                    )
+                )
+            )
+            2: Stmt_Expression(
+                expr: Expr_Assign(
+                    var: Expr_Variable(
+                        name: date
+                    )
+                    expr: Expr_FuncCall(
+                        name: Name(
+                            name: date_create
+                        )
+                        args: array(
+                            0: Arg(
+                                name: null
+                                value: Expr_ArrayDimFetch(
+                                    var: Expr_Variable(
+                                        name: entry
+                                    )
+                                    dim: Scalar_String(
+                                        value: updated
+                                    )
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                        )
+                    )
+                )
+            )
+            3: Stmt_Expression(
+                expr: Expr_Assign(
+                    var: Expr_Variable(
+                        name: date_human
+                    )
+                    expr: Expr_FuncCall(
+                        name: Name(
+                            name: date_format
+                        )
+                        args: array(
+                            0: Arg(
+                                name: null
+                                value: Expr_Variable(
+                                    name: date
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                            1: Arg(
+                                name: null
+                                value: Scalar_String(
+                                    value: d M Y
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                        )
+                    )
+                )
+            )
+            4: Stmt_Expression(
+                expr: Expr_Assign(
+                    var: Expr_Variable(
+                        name: date_w3c
+                    )
+                    expr: Expr_FuncCall(
+                        name: Name(
+                            name: date_format
+                        )
+                        args: array(
+                            0: Arg(
+                                name: null
+                                value: Expr_Variable(
+                                    name: date
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                            1: Arg(
+                                name: null
+                                value: Expr_ConstFetch(
+                                    name: Name(
+                                        name: DATE_W3C
+                                    )
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                        )
+                    )
+                )
+            )
+            5: Stmt_Expression(
+                expr: Expr_AssignOp_Concat(
+                    var: Expr_Variable(
+                        name: content
+                    )
+                    expr: Scalar_InterpolatedString(
+                        parts: array(
+                            0: InterpolatedStringPart(
+                                value: <article class="newsentry">
+                                  <header class="title">
+                                    <time datetime="
+                            )
+                            1: Expr_Variable(
+                                name: date_w3c
+                            )
+                            2: InterpolatedStringPart(
+                                value: ">
+                            )
+                            3: Expr_Variable(
+                                name: date_human
+                            )
+                            4: InterpolatedStringPart(
+                                value: </time>
+                                    <h2 class="newstitle">
+                                      <a href="
+                            )
+                            5: Expr_Variable(
+                                name: MYSITE
+                            )
+                            6: Expr_Variable(
+                                name: link
+                            )
+                            7: InterpolatedStringPart(
+                                value: " id="
+                            )
+                            8: Expr_Variable(
+                                name: id
+                            )
+                            9: InterpolatedStringPart(
+                                value: ">
+                            )
+                            10: Expr_ArrayDimFetch(
+                                var: Expr_Variable(
+                                    name: entry
+                                )
+                                dim: Scalar_String(
+                                    value: title
+                                )
+                            )
+                            11: InterpolatedStringPart(
+                                value: </a>
+                                    </h2>
+                                  </header>
+                                  <div class="newscontent">
+                                    
+                            )
+                            12: Expr_ArrayDimFetch(
+                                var: Expr_Variable(
+                                    name: entry
+                                )
+                                dim: Scalar_String(
+                                    value: content
+                                )
+                            )
+                            13: InterpolatedStringPart(
+                                value: 
+                                  </div>
+                                </article>
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+    22: Stmt_Expression(
+        expr: Expr_AssignOp_Concat(
+            var: Expr_Variable(
+                name: content
+            )
+            expr: Scalar_String(
+                value: <p class="archive"><a href="/archive/">Older News Entries</a></p>
+            )
+        )
+    )
+    23: Stmt_Expression(
+        expr: Expr_AssignOp_Concat(
+            var: Expr_Variable(
+                name: content
+            )
+            expr: Scalar_String(
+                value: </div>
+            )
+        )
+    )
+    24: Stmt_Expression(
+        expr: Expr_Assign(
+            var: Expr_Variable(
+                name: intro
+            )
+            expr: Scalar_String(
+                value:   <div class="hero">
+                    <img class="hero-logo" src="/images/logos/php-logo-white.svg" alt="php" width="240" height="120">
+                    <p class="hero-text">A <strong>popular general-purpose scripting language</strong> that is especially suited to web development.<br />Fast, flexible and pragmatic, PHP powers everything from your blog to the most popular websites in the world.</p>
+                    <div class="hero-actions">
+                      <a href="/releases/8.3/index.php" class="hero-btn hero-btn-primary">What's new in 8.3</a>
+                      <a href="/downloads.php" class="hero-btn hero-btn-secondary">Download</a>
+                    </div>
+            )
+        )
+    )
+    25: Stmt_Expression(
+        expr: Expr_AssignOp_Concat(
+            var: Expr_Variable(
+                name: intro
+            )
+            expr: Scalar_String(
+                value: <ul class='hero-versions'>
+                
+            )
+        )
+    )
+    26: Stmt_Expression(
+        expr: Expr_Assign(
+            var: Expr_Variable(
+                name: active_branches
+            )
+            expr: Expr_FuncCall(
+                name: Name(
+                    name: get_active_branches
+                )
+                args: array(
+                )
+            )
+        )
+    )
+    27: Stmt_Expression(
+        expr: Expr_FuncCall(
+            name: Name(
+                name: krsort
+            )
+            args: array(
+                0: Arg(
+                    name: null
+                    value: Expr_Variable(
+                        name: active_branches
+                    )
+                    byRef: false
+                    unpack: false
+                )
+            )
+        )
+    )
+    28: Stmt_Foreach(
+        expr: Expr_Variable(
+            name: active_branches
+        )
+        keyVar: Expr_Variable(
+            name: major
+        )
+        byRef: false
+        valueVar: Expr_Variable(
+            name: releases
+        )
+        stmts: array(
+            0: Stmt_Expression(
+                expr: Expr_FuncCall(
+                    name: Name(
+                        name: krsort
+                    )
+                    args: array(
+                        0: Arg(
+                            name: null
+                            value: Expr_Variable(
+                                name: releases
+                            )
+                            byRef: false
+                            unpack: false
+                        )
+                    )
+                )
+            )
+            1: Stmt_Foreach(
+                expr: Expr_Cast_Array(
+                    expr: Expr_Variable(
+                        name: releases
+                    )
+                )
+                keyVar: null
+                byRef: false
+                valueVar: Expr_Variable(
+                    name: release
+                )
+                stmts: array(
+                    0: Stmt_Expression(
+                        expr: Expr_Assign(
+                            var: Expr_Variable(
+                                name: version
+                            )
+                            expr: Expr_ArrayDimFetch(
+                                var: Expr_Variable(
+                                    name: release
+                                )
+                                dim: Scalar_String(
+                                    value: version
+                                )
+                            )
+                        )
+                    )
+                    1: Stmt_Expression(
+                        expr: Expr_Assign(
+                            var: Expr_List(
+                                items: array(
+                                    0: ArrayItem(
+                                        key: null
+                                        value: Expr_Variable(
+                                            name: major
+                                        )
+                                        byRef: false
+                                        unpack: false
+                                    )
+                                    1: ArrayItem(
+                                        key: null
+                                        value: Expr_Variable(
+                                            name: minor
+                                        )
+                                        byRef: false
+                                        unpack: false
+                                    )
+                                    2: ArrayItem(
+                                        key: null
+                                        value: Expr_Variable(
+                                            name: _
+                                        )
+                                        byRef: false
+                                        unpack: false
+                                    )
+                                )
+                            )
+                            expr: Expr_FuncCall(
+                                name: Name(
+                                    name: explode
+                                )
+                                args: array(
+                                    0: Arg(
+                                        name: null
+                                        value: Scalar_String(
+                                            value: .
+                                        )
+                                        byRef: false
+                                        unpack: false
+                                    )
+                                    1: Arg(
+                                        name: null
+                                        value: Expr_Variable(
+                                            name: version
+                                        )
+                                        byRef: false
+                                        unpack: false
+                                    )
+                                )
+                            )
+                        )
+                    )
+                    2: Stmt_Expression(
+                        expr: Expr_AssignOp_Concat(
+                            var: Expr_Variable(
+                                name: intro
+                            )
+                            expr: Scalar_InterpolatedString(
+                                parts: array(
+                                    0: InterpolatedStringPart(
+                                        value: 
+                                                    <li class='hero-version'><a class='hero-version-link' href='/downloads.php#v
+                                    )
+                                    1: Expr_Variable(
+                                        name: version
+                                    )
+                                    2: InterpolatedStringPart(
+                                        value: '>
+                                    )
+                                    3: Expr_Variable(
+                                        name: version
+                                    )
+                                    4: InterpolatedStringPart(
+                                        value: </a> &middot; <a class='notes' href='/ChangeLog-
+                                    )
+                                    5: Expr_Variable(
+                                        name: major
+                                    )
+                                    6: InterpolatedStringPart(
+                                        value: .php#
+                                    )
+                                    7: Expr_Variable(
+                                        name: version
+                                    )
+                                    8: InterpolatedStringPart(
+                                        value: '>Changelog</a> &middot; <a class='notes' href='/migration
+                                    )
+                                    9: Expr_Variable(
+                                        name: major
+                                    )
+                                    10: Expr_Variable(
+                                        name: minor
+                                    )
+                                    11: InterpolatedStringPart(
+                                        value: '>Upgrading</a></li>
+                                        
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    )
+    29: Stmt_Expression(
+        expr: Expr_AssignOp_Concat(
+            var: Expr_Variable(
+                name: intro
+            )
+            expr: Scalar_String(
+                value: </ul>
+                
+            )
+        )
+    )
+    30: Stmt_Expression(
+        expr: Expr_AssignOp_Concat(
+            var: Expr_Variable(
+                name: intro
+            )
+            expr: Scalar_String(
+                value:   </div>
+            )
+        )
+    )
+    31: Stmt_Expression(
+        expr: Expr_FuncCall(
+            name: Name(
+                name: site_header
+            )
+            args: array(
+                0: Arg(
+                    name: null
+                    value: Scalar_String(
+                        value: Hypertext Preprocessor
+                    )
+                    byRef: false
+                    unpack: false
+                )
+                1: Arg(
+                    name: null
+                    value: Expr_Array(
+                        items: array(
+                            0: ArrayItem(
+                                key: Scalar_String(
+                                    value: current
+                                )
+                                value: Scalar_String(
+                                    value: home
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                            1: ArrayItem(
+                                key: Scalar_String(
+                                    value: headtags
+                                )
+                                value: Expr_Array(
+                                    items: array(
+                                        0: ArrayItem(
+                                            key: null
+                                            value: Expr_BinaryOp_Concat(
+                                                left: Expr_BinaryOp_Concat(
+                                                    left: Scalar_String(
+                                                        value: <link rel="alternate" type="application/atom+xml" title="PHP: Hypertext Preprocessor" href="
+                                                    )
+                                                    right: Expr_Variable(
+                                                        name: MYSITE
+                                                    )
+                                                )
+                                                right: Scalar_String(
+                                                    value: feed.atom">
+                                                )
+                                            )
+                                            byRef: false
+                                            unpack: false
+                                        )
+                                        1: ArrayItem(
+                                            key: null
+                                            value: Scalar_String(
+                                                value: <script>
+                                            )
+                                            byRef: false
+                                            unpack: false
+                                        )
+                                        2: ArrayItem(
+                                            key: null
+                                            value: Scalar_String(
+                                                value: function okc(f){var c=[38,38,40,40,37,39,37,39,66,65,13],x=function(){x.c=x.c||Array.apply({},c);x.r=function(){x.c=null};return x.c},h=function(e){if(x()[0]==(e||window.event).keyCode){x().shift();if(!x().length){x.r();f()}}else{x.r()}};window.addEventListener?window.addEventListener('keydown',h,false):document.attachEvent('onkeydown',h)}
+                                            )
+                                            byRef: false
+                                            unpack: false
+                                        )
+                                        3: ArrayItem(
+                                            key: null
+                                            value: Expr_BinaryOp_Concat(
+                                                left: Expr_BinaryOp_Concat(
+                                                    left: Scalar_String(
+                                                        value: okc(function(){if(document.getElementById){i=document.getElementById('phplogo');i.src='
+                                                    )
+                                                    right: Expr_Variable(
+                                                        name: MYSITE
+                                                    )
+                                                )
+                                                right: Scalar_String(
+                                                    value: images/php_konami.gif'}});
+                                                )
+                                            )
+                                            byRef: false
+                                            unpack: false
+                                        )
+                                        4: ArrayItem(
+                                            key: null
+                                            value: Scalar_String(
+                                                value: </script>
+                                            )
+                                            byRef: false
+                                            unpack: false
+                                        )
+                                    )
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                            2: ArrayItem(
+                                key: Scalar_String(
+                                    value: link
+                                )
+                                value: Expr_Array(
+                                    items: array(
+                                        0: ArrayItem(
+                                            key: null
+                                            value: Expr_Array(
+                                                items: array(
+                                                    0: ArrayItem(
+                                                        key: Scalar_String(
+                                                            value: rel
+                                                        )
+                                                        value: Scalar_String(
+                                                            value: search
+                                                        )
+                                                        byRef: false
+                                                        unpack: false
+                                                    )
+                                                    1: ArrayItem(
+                                                        key: Scalar_String(
+                                                            value: type
+                                                        )
+                                                        value: Scalar_String(
+                                                            value: application/opensearchdescription+xml
+                                                        )
+                                                        byRef: false
+                                                        unpack: false
+                                                    )
+                                                    2: ArrayItem(
+                                                        key: Scalar_String(
+                                                            value: href
+                                                        )
+                                                        value: Expr_BinaryOp_Concat(
+                                                            left: Expr_Variable(
+                                                                name: MYSITE
+                                                            )
+                                                            right: Scalar_String(
+                                                                value: phpnetimprovedsearch.src
+                                                            )
+                                                        )
+                                                        byRef: false
+                                                        unpack: false
+                                                    )
+                                                    3: ArrayItem(
+                                                        key: Scalar_String(
+                                                            value: title
+                                                        )
+                                                        value: Scalar_String(
+                                                            value: Add PHP.net search
+                                                        )
+                                                        byRef: false
+                                                        unpack: false
+                                                    )
+                                                )
+                                            )
+                                            byRef: false
+                                            unpack: false
+                                        )
+                                        1: ArrayItem(
+                                            key: null
+                                            value: Expr_Array(
+                                                items: array(
+                                                    0: ArrayItem(
+                                                        key: Scalar_String(
+                                                            value: rel
+                                                        )
+                                                        value: Scalar_String(
+                                                            value: alternate
+                                                        )
+                                                        byRef: false
+                                                        unpack: false
+                                                    )
+                                                    1: ArrayItem(
+                                                        key: Scalar_String(
+                                                            value: type
+                                                        )
+                                                        value: Scalar_String(
+                                                            value: application/atom+xml
+                                                        )
+                                                        byRef: false
+                                                        unpack: false
+                                                    )
+                                                    2: ArrayItem(
+                                                        key: Scalar_String(
+                                                            value: href
+                                                        )
+                                                        value: Expr_BinaryOp_Concat(
+                                                            left: Expr_Variable(
+                                                                name: MYSITE
+                                                            )
+                                                            right: Scalar_String(
+                                                                value: releases/feed.php
+                                                            )
+                                                        )
+                                                        byRef: false
+                                                        unpack: false
+                                                    )
+                                                    3: ArrayItem(
+                                                        key: Scalar_String(
+                                                            value: title
+                                                        )
+                                                        value: Scalar_String(
+                                                            value: PHP Release feed
+                                                        )
+                                                        byRef: false
+                                                        unpack: false
+                                                    )
+                                                )
+                                            )
+                                            byRef: false
+                                            unpack: false
+                                        )
+                                    )
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                            3: ArrayItem(
+                                key: Scalar_String(
+                                    value: css
+                                )
+                                value: Expr_Array(
+                                    items: array(
+                                        0: ArrayItem(
+                                            key: null
+                                            value: Scalar_String(
+                                                value: home.css
+                                            )
+                                            byRef: false
+                                            unpack: false
+                                        )
+                                    )
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                            4: ArrayItem(
+                                key: Scalar_String(
+                                    value: intro
+                                )
+                                value: Expr_Variable(
+                                    name: intro
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                        )
+                    )
+                    byRef: false
+                    unpack: false
+                )
+            )
+        )
+    )
+    32: Stmt_Echo(
+        exprs: array(
+            0: Expr_Variable(
+                name: content
+            )
+        )
+    )
+    33: Stmt_If(
+        cond: Expr_FuncCall(
+            name: Name(
+                name: is_array
+            )
+            args: array(
+                0: Arg(
+                    name: null
+                    value: Expr_Variable(
+                        name: CONF_TEASER
+                    )
+                    byRef: false
+                    unpack: false
+                )
+            )
+        )
+        stmts: array(
+            0: Stmt_Expression(
+                expr: Expr_Assign(
+                    var: Expr_Variable(
+                        name: conftype
+                    )
+                    expr: Expr_Array(
+                        items: array(
+                            0: ArrayItem(
+                                key: Scalar_String(
+                                    value: conference
+                                )
+                                value: Scalar_String(
+                                    value: Upcoming conferences
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                            1: ArrayItem(
+                                key: Scalar_String(
+                                    value: cfp
+                                )
+                                value: Scalar_String(
+                                    value: Conferences calling for papers
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                        )
+                    )
+                )
+            )
+            1: Stmt_Expression(
+                expr: Expr_Assign(
+                    var: Expr_Variable(
+                        name: announcements
+                    )
+                    expr: Scalar_String(
+                        value: 
+                    )
+                )
+            )
+            2: Stmt_Foreach(
+                expr: Expr_Variable(
+                    name: CONF_TEASER
+                )
+                keyVar: Expr_Variable(
+                    name: category
+                )
+                byRef: false
+                valueVar: Expr_Variable(
+                    name: entries
+                )
+                stmts: array(
+                    0: Stmt_If(
+                        cond: Expr_Variable(
+                            name: entries
+                        )
+                        stmts: array(
+                            0: Stmt_Expression(
+                                expr: Expr_AssignOp_Concat(
+                                    var: Expr_Variable(
+                                        name: announcements
+                                    )
+                                    expr: Scalar_String(
+                                        value: <div class="panel">
+                                    )
+                                )
+                            )
+                            1: Stmt_Expression(
+                                expr: Expr_AssignOp_Concat(
+                                    var: Expr_Variable(
+                                        name: announcements
+                                    )
+                                    expr: Expr_BinaryOp_Concat(
+                                        left: Expr_BinaryOp_Concat(
+                                            left: Expr_BinaryOp_Concat(
+                                                left: Expr_BinaryOp_Concat(
+                                                    left: Scalar_String(
+                                                        value:   <a href="/conferences" class="headline" title="
+                                                    )
+                                                    right: Expr_ArrayDimFetch(
+                                                        var: Expr_Variable(
+                                                            name: conftype
+                                                        )
+                                                        dim: Expr_Variable(
+                                                            name: category
+                                                        )
+                                                    )
+                                                )
+                                                right: Scalar_String(
+                                                    value: ">
+                                                )
+                                            )
+                                            right: Expr_ArrayDimFetch(
+                                                var: Expr_Variable(
+                                                    name: conftype
+                                                )
+                                                dim: Expr_Variable(
+                                                    name: category
+                                                )
+                                            )
+                                        )
+                                        right: Scalar_String(
+                                            value: </a>
+                                        )
+                                    )
+                                )
+                            )
+                            2: Stmt_Expression(
+                                expr: Expr_AssignOp_Concat(
+                                    var: Expr_Variable(
+                                        name: announcements
+                                    )
+                                    expr: Scalar_String(
+                                        value: <div class="body"><ul>
+                                    )
+                                )
+                            )
+                            3: Stmt_Foreach(
+                                expr: Expr_FuncCall(
+                                    name: Name(
+                                        name: array_slice
+                                    )
+                                    args: array(
+                                        0: Arg(
+                                            name: null
+                                            value: Expr_Variable(
+                                                name: entries
+                                            )
+                                            byRef: false
+                                            unpack: false
+                                        )
+                                        1: Arg(
+                                            name: null
+                                            value: Scalar_Int(
+                                                value: 0
+                                            )
+                                            byRef: false
+                                            unpack: false
+                                        )
+                                        2: Arg(
+                                            name: null
+                                            value: Scalar_Int(
+                                                value: 4
+                                            )
+                                            byRef: false
+                                            unpack: false
+                                        )
+                                    )
+                                )
+                                keyVar: Expr_Variable(
+                                    name: url
+                                )
+                                byRef: false
+                                valueVar: Expr_Variable(
+                                    name: title
+                                )
+                                stmts: array(
+                                    0: Stmt_Expression(
+                                        expr: Expr_Assign(
+                                            var: Expr_Variable(
+                                                name: title
+                                            )
+                                            expr: Expr_FuncCall(
+                                                name: Name(
+                                                    name: preg_replace
+                                                )
+                                                args: array(
+                                                    0: Arg(
+                                                        name: null
+                                                        value: Scalar_String(
+                                                            value: '([A-Za-z0-9])([\s:\-,]*?)call for(.*?)$'i
+                                                        )
+                                                        byRef: false
+                                                        unpack: false
+                                                    )
+                                                    1: Arg(
+                                                        name: null
+                                                        value: Scalar_String(
+                                                            value: $1
+                                                        )
+                                                        byRef: false
+                                                        unpack: false
+                                                    )
+                                                    2: Arg(
+                                                        name: null
+                                                        value: Expr_Variable(
+                                                            name: title
+                                                        )
+                                                        byRef: false
+                                                        unpack: false
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                    1: Stmt_Expression(
+                                        expr: Expr_AssignOp_Concat(
+                                            var: Expr_Variable(
+                                                name: announcements
+                                            )
+                                            expr: Scalar_InterpolatedString(
+                                                parts: array(
+                                                    0: InterpolatedStringPart(
+                                                        value: <li><a href='
+                                                    )
+                                                    1: Expr_Variable(
+                                                        name: url
+                                                    )
+                                                    2: InterpolatedStringPart(
+                                                        value: ' title='
+                                                    )
+                                                    3: Expr_Variable(
+                                                        name: title
+                                                    )
+                                                    4: InterpolatedStringPart(
+                                                        value: '>
+                                                    )
+                                                    5: Expr_Variable(
+                                                        name: title
+                                                    )
+                                                    6: InterpolatedStringPart(
+                                                        value: </a></li>
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                            4: Stmt_Expression(
+                                expr: Expr_AssignOp_Concat(
+                                    var: Expr_Variable(
+                                        name: announcements
+                                    )
+                                    expr: Scalar_String(
+                                        value: </ul></div>
+                                    )
+                                )
+                            )
+                            5: Stmt_Expression(
+                                expr: Expr_AssignOp_Concat(
+                                    var: Expr_Variable(
+                                        name: announcements
+                                    )
+                                    expr: Scalar_String(
+                                        value: </div>
+                                    )
+                                )
+                            )
+                        )
+                        elseifs: array(
+                        )
+                        else: null
+                    )
+                )
+            )
+        )
+        elseifs: array(
+        )
+        else: Stmt_Else(
+            stmts: array(
+                0: Stmt_Expression(
+                    expr: Expr_Assign(
+                        var: Expr_Variable(
+                            name: announcements
+                        )
+                        expr: Scalar_String(
+                            value: 
+                        )
+                    )
+                )
+            )
+        )
+    )
+    34: Stmt_Expression(
+        expr: Expr_Assign(
+            var: Expr_Variable(
+                name: SIDEBAR
+            )
+            expr: Scalar_InterpolatedString(
+                parts: array(
+                    0: InterpolatedStringPart(
+                        value: 
+                            <div class='panel'>
+                              <a href='https://thephp.foundation/' class='headline'>The PHP Foundation</a>
+                              <div class='body'>
+                                <p>The PHP Foundation is a collective of people and organizations, united in the mission to ensure the long-term prosperity of the PHP language.
+                                <p><a href='https://thephp.foundation/donate/' class='btn btn-primary'>Donate</a></p>
+                              </div>
+                            </div>
+                        
+                    )
+                    1: Expr_Variable(
+                        name: announcements
+                    )
+                    2: InterpolatedStringPart(
+                        value: 
+                            <p class='panel'><a href='/cal.php'>User Group Events</a></p>
+                            <p class='panel'><a href='/thanks.php'>Special Thanks</a></p>
+                            <div class='panel social-media'>
+                              <span class='headline'>Social media</span>
+                              <div class='body'>
+                                <ul>
+                                  <li>
+                                    <a href="https://twitter.com/official_php">
+                                      <i class="icon-x-twitter"></i>
+                                      @official_php
+                                    </a>
+                                  </li>
+                                  <li>
+                                    <a href="https://fosstodon.org/@php">
+                                      <i class="icon-mastodon"></i>
+                                      @php@fosstodon.org
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                        
+                    )
+                )
+            )
+        )
+    )
+    35: Stmt_Expression(
+        expr: Expr_FuncCall(
+            name: Name(
+                name: site_footer
+            )
+            args: array(
+                0: Arg(
+                    name: null
+                    value: Expr_Array(
+                        items: array(
+                            0: ArrayItem(
+                                key: Scalar_String(
+                                    value: atom
+                                )
+                                value: Scalar_String(
+                                    value: /feed.atom
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                            1: ArrayItem(
+                                key: Scalar_String(
+                                    value: elephpants
+                                )
+                                value: Expr_ConstFetch(
+                                    name: Name(
+                                        name: true
+                                    )
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                            2: ArrayItem(
+                                key: Scalar_String(
+                                    value: sidebar
+                                )
+                                value: Expr_Variable(
+                                    name: SIDEBAR
+                                )
+                                byRef: false
+                                unpack: false
+                            )
+                        )
+                    )
+                    byRef: false
+                    unpack: false
+                )
+            )
+        )
+    )
+)
