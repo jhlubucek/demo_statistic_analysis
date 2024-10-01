@@ -5,7 +5,7 @@ interface ProductRepository {
 }
 
 interface Notifier {
-    public function notify(?Product $product, string $message): void;
+    public function notify(Product $product, string $message): void;
 }
 
 
@@ -61,13 +61,9 @@ class InMemoryProductRepository implements ProductRepository
 // Step 3: Implement the Notifier interface
 class EmailNotifier implements Notifier
 {
-    public function notify(?Product $product, string $message): void
+    public function notify(Product $product, string $message): void
     {
-        if (!is_null($product)) {
-            echo "Notification sent for product '{$product->getName()}': $message\n";
-        }else{
-            throw new \InvalidArgumentException("Product cannot be null");
-        }
+        echo "Notification sent for product '{$product->getName()}': $message\n";
     }
 }
 
@@ -75,8 +71,12 @@ class EmailNotifier implements Notifier
 $productRepository = new InMemoryProductRepository();
 $notifier = new EmailNotifier();
 
-
 $product = $productRepository->findProduct("12345");
-$notifier->notify($product, "New product available!");
+
+if (!is_null($product)) {
+    $notifier->notify($product, "New product available!");
+}else{
+    throw new \InvalidArgumentException("Product is null");
+}
 
 
