@@ -74,5 +74,3 @@ $notifier = new EmailNotifier();
 
 $product = $productRepository->findProduct("12345");
 $notifier->notify($product, "New product available!");
-
-

@@ -71,6 +71,7 @@ class EmailNotifier implements Notifier
 $productRepository = new InMemoryProductRepository();
 $notifier = new EmailNotifier();
 
+
 $product = $productRepository->findProduct("12345");
 
 if (!is_null($product)) {
@@ -78,5 +79,3 @@ if (!is_null($product)) {
 }else{
     throw new \InvalidArgumentException("Product is null");
 }
-
-
